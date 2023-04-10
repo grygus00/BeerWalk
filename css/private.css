@@ -1,0 +1,144 @@
+@font-face {
+  font-family: jackpot;
+  src: url(../fonts/jackpot.ttf);
+}
+
+@font-face {
+  font-family: suburban flamingo;
+  src: url(../fonts/suburbanflamingo.ttf);
+}
+
+html {
+  overflow-x: hidden;
+
+}
+
+body {
+  background-color: #1f1f1f;
+  margin: 0;
+}
+
+/* Typography */
+h1 {
+  font-family: 'jackpot';
+  color: #F4BB1F;
+  font-size: 4vw;
+}
+
+h2 {
+  font-family: 'suburban flamingo';
+  color: #FBF8EF;
+  font-size: 2vw;
+}
+
+h3 {
+  font-family: 'suburban flamingo';
+  color: #FBF8EF;
+  font-size: 2vw;
+}
+
+p {
+  font-family: 'verdana';
+  color: #FBF8EF;
+  font-size: 17px;
+  margin: auto;
+}
+
+a {
+  font-family: 'suburban flamingo';
+  color: #FBF8EF;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 2vw;
+  margin-right: 10px;
+}
+
+a:hover {
+  color: #F4BB1F;
+}
+
+header {
+  width: 100vw;
+  height: 4vw;
+  border-bottom: 1px solid #FBF8EF;
+  margin: 0 auto;
+}
+
+nav {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 10fr 2fr;
+}
+
+nav div {
+  position: relative;
+}
+
+nav div a {
+  margin: auto;
+
+}
+
+#div_walks a {
+  margin: 0 1rem;
+}
+
+#div_walks,
+#div_about {
+  margin-top: 1.5rem;
+}
+
+
+.logo {
+  width: auto;
+  height: 7vw;
+  position: absolute;
+  top: 1.3vw;
+  left: 3vw;
+}
+
+footer {
+  min-width: 40vw;
+  height: 100vh;
+  order: 6;
+  background-image: url("../illustrations/skaal.png");
+  background-size: 85vw;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position-y: -58vh;
+  background-position-x: center;
+
+}
+
+.info_box {
+  background-color: #F4BB1F;
+  height: 9vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+#icons {
+  position: absolute;
+  right: 8vw;
+}
+
+.social_icon {
+  width: 4vw;
+  margin: 0 1vw;
+  height: auto;
+}
+
+/* //////////////////////////////// ADDITIONAL CHANGES /////////////////////////////////// */
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #F4BB1F;
+  outline: 1px solid #000000;
+}

@@ -1,0 +1,425 @@
+@font-face {
+  font-family: jackpot;
+  src: url(/fonts/jackpot.ttf);
+}
+@font-face {
+  font-family: suburban flamingo;
+  src: url(/fonts/suburbanflamingo.ttf);
+}
+
+body {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#screen {
+  width: 98.5vw;
+  height: 50vw;
+  aspect-ratio: 16/8;
+  position: relative;
+  overflow: hidden;
+}
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#game_background {
+  background-image: url("../graphics/background.png");
+  background-size: 85vw;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#title_screen {
+  background-image: url("../graphics/title.svg");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#instructions {
+  background-image: url("../graphics/instructions_screen.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#game_over {
+  background-image: url("../graphics/losing.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#winning {
+  background-image: url("../graphics/winning.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#game_sprites {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* Containers for good and bad items */
+
+#game_foreground {
+  position: absolute;
+  width: 35%;
+  aspect-ratio: 1.45/1;
+  left: 2%;
+  bottom: -9%;
+  pointer-events: none;
+}
+
+#goodItemContainer1 {
+  position: absolute;
+  width: 4%;
+  aspect-ratio: 1/1.85;
+}
+
+#goodItemContainer2 {
+  position: absolute;
+  width: 5%;
+  aspect-ratio: 1/1.29;
+}
+#goodItemContainer3 {
+  position: absolute;
+  width: 3%;
+  aspect-ratio: 1/3;
+}
+
+#badItemContainer1 {
+  position: absolute;
+  width: 11%;
+  aspect-ratio: 1/1;
+}
+
+#badItemContainer2 {
+  position: absolute;
+  width: 11%;
+  aspect-ratio: 1/1;
+}
+
+#mermaid1 {
+  background-image: url("../graphics/chris.png");
+  background-repeat: no-repeat;
+  background-size: 20vw;
+  height: 100%;
+  width: 100%;
+  /* background-size: cover; */
+}
+
+/* Good & Bad Items */
+
+#goodItemSprite1 {
+  background-image: url("../graphics/smallGlass.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#goodItemSprite2 {
+  background-image: url("../graphics/beer.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+#goodItemSprite3 {
+  background-image: url("../graphics/tallGlass.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#badItemSprite1 {
+  background-image: url("../graphics/cocktail1.png");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#badItemSprite2 {
+  background-image: url("../graphics/cocktail3.png");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+/* Good item positions  */
+
+.pos1 {
+  top: 10%;
+  left: 10%;
+}
+.pos2 {
+  top: 10%;
+  left: 30%;
+}
+.pos3 {
+  top: 10%;
+  left: 60%;
+}
+.pos4 {
+  top: 10%;
+  left: 90%;
+}
+
+/* Bad item positions */
+.pos5 {
+  top: 10%;
+  left: 5%;
+}
+.pos6 {
+  top: 10%;
+  left: 25%;
+}
+.pos7 {
+  top: 10%;
+  left: 55%;
+}
+.pos8 {
+  top: 10%;
+  left: 85%;
+}
+/* Animations */
+
+.falling1 {
+  animation-name: falling;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.falling2 {
+  animation-name: falling;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.rotation {
+  animation: rotate 1s;
+}
+
+.stop {
+  animation-play-state: paused;
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  100% {
+    transform: translateY(700%);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(5turn);
+  }
+}
+
+/* Timer */
+
+#time_container {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 3%;
+  height: 30%;
+  /* border: 0.1rem solid #F9D66B; */
+  background-color: #ffffff;
+}
+#time_sprite {
+  width: 100%;
+  height: 100%;
+  transform-origin: center bottom;
+}
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes shrink_kf {
+  0% {
+    transform: scaleY(1);
+    background-color: #000000;
+  }
+  50% {
+    background-color: #000000;
+  }
+  100% {
+    transform: scaleY(0);
+    background-color: #000000;
+  }
+}
+
+#playbutton_container {
+  position: absolute;
+  bottom: 2%;
+  right: 34%;
+  width: 15%;
+  aspect-ratio: 2.65/1;
+}
+
+#playbutton_sprite {
+  background-image: url("../graphics/playgame.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#instructionsButton_container {
+  position: absolute;
+  bottom: 2%;
+  right: 51%;
+  width: 15%;
+  aspect-ratio: 2.65/1;
+}
+
+#instructionsButton_sprite {
+  background-image: url("../graphics/instructions.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#try_again {
+  background-image: url("../graphics/tryagain.svg");
+  position: absolute;
+  top: 75%;
+  left: 53%;
+  width: 15%;
+  aspect-ratio: 2.65/1;
+  background-size: cover;
+}
+
+#instructionsButton2 {
+  background-image: url("../graphics/instructions.svg");
+  position: absolute;
+  top: 75%;
+  right: 12%;
+  width: 15%;
+  aspect-ratio: 2.65/1;
+  background-size: cover;
+}
+
+#game_ui {
+  position: relative;
+  height: 100%;
+  display: flex;
+  pointer-events: none;
+  justify-content: space-between;
+}
+
+#health_score {
+  display: flex;
+}
+
+#health_board {
+  display: flex;
+}
+
+.life {
+  background-image: url("../graphics/Life.svg");
+  aspect-ratio: 1/2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1vw;
+  height: 3vw;
+}
+
+#score_board {
+  border: 1px solid black;
+  width: 3vw;
+  height: 3vw;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 100%; */
+}
+
+#playbutton_container2 {
+  position: absolute;
+  bottom: 3%;
+  right: 15%;
+  width: 15%;
+  aspect-ratio: 2.65/1;
+}
+
+#playbutton_sprite2 {
+  background-image: url("../graphics/playgame.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#try_again2 {
+  background-image: url("../graphics/tryagain.svg");
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  width: 15%;
+  aspect-ratio: 2.65/1;
+  background-size: cover;
+}
+
+h1 {
+  position: absolute;
+  top: 18%;
+  left: 31%;
+  font-family: "jackpot";
+  font-size: 1.5vw;
+  font-weight: 100;
+}
+p {
+  position: absolute;
+  top: 35%;
+  left: 31%;
+  font-family: "verdana";
+  width: 35ch;
+  font-size: 1.3vw;
+}
+
+#sound_on {
+  background-image: url("../graphics/sound.svg");
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 2%;
+  left: 9.5%;
+  width: 4%;
+}
+
+#sound_off {
+  background-image: url("../graphics/nosound.svg");
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  width: 4%;
+}

@@ -1,0 +1,392 @@
+@font-face {
+  font-family: jackpot;
+  src: url(../fonts/jackpot.ttf);
+}
+
+@font-face {
+  font-family: suburban flamingo;
+  src: url(../fonts/suburbanflamingo.ttf);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #1f1f1f;
+  margin: 0;
+}
+
+/* Typography */
+h1 {
+  font-family: "jackpot";
+  color: #f4bb1f;
+  font-size: 3vw;
+}
+
+h2 {
+  font-family: "suburban flamingo";
+  color: #fbf8ef;
+  font-size: 6vw;
+}
+
+h3 {
+  font-family: "suburban flamingo";
+  color: #1f1f1f;
+  font-size: 2vw;
+  text-align: center;
+}
+
+p {
+  font-family: "verdana";
+  color: #fbf8ef;
+  font-size: 17px;
+  margin: auto;
+}
+
+a {
+  font-family: "suburban flamingo";
+  color: #fbf8ef;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+a:hover {
+  color: #f4bb1f;
+}
+
+header {
+  width: 100vw;
+  height: 4vw;
+  border-bottom: 1px solid #fbf8ef;
+  margin: 0 auto;
+}
+
+nav {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 10fr 2fr;
+}
+
+nav div {
+  position: relative;
+}
+
+nav div a {
+  margin: auto;
+}
+
+#div_walks a {
+  margin: 0 1rem;
+}
+
+#div_walks,
+#div_about {
+  margin-top: 1.5rem;
+}
+
+.logo {
+  width: auto;
+  height: 7vw;
+  position: absolute;
+  top: 1.3vw;
+  left: 3vw;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  flex-direction: row;
+  margin: 0 auto;
+  height: auto;
+}
+
+footer {
+  min-width: 40vw;
+  height: 100vh;
+  order: 6;
+  background-image: url("../illustrations/skaal.png");
+  background-size: 85vw;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position-y: -58vh;
+  background-position-x: center;
+}
+
+.info_box {
+  background-color: #f4bb1f;
+  height: 9vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+#icons {
+  position: absolute;
+  right: 8vw;
+}
+
+.social_icon {
+  width: 4vw;
+  margin: 0 1vw;
+  height: auto;
+}
+
+/* Buttons */
+
+.joinBtn {
+  width: auto;
+  height: 5vw;
+  position: relative;
+  top: 28vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 0.7vw;
+}
+
+.bookBtn {
+  width: 15vw;
+  position: relative;
+  left: 0vw;
+  padding: 0.7vw;
+  cursor: pointer;
+}
+
+/* Animations */
+.joinBtn:hover,
+.bookBtn:hover,
+.logo:hover {
+  animation: zoom_in 1s forwards;
+}
+
+.joinBtn:not(:hover),
+.bookBtn:not(:hover),
+.logo:not(:hover) {
+  animation: zoom_out 1s forwards;
+}
+
+@keyframes zoom_in {
+  from {
+    transform: scale(100%);
+  }
+
+  to {
+    transform: scale(110%);
+  }
+}
+
+@keyframes zoom_out {
+  from {
+    transform: scale(110%);
+  }
+
+  to {
+    transform: scale(100%);
+  }
+}
+
+#partOne {
+  order: 1;
+
+  min-width: 90vw;
+  width: 100vw;
+  gap: 0;
+  grid-auto-rows: minmax(100vw);
+  margin: 0 auto;
+  align-items: top;
+  justify-content: center;
+  display: flex;
+  flex: 2;
+}
+
+#partOneFirst {
+  display: grid;
+  grid-template-rows: 3;
+  align-content: space-evenly;
+  min-width: 45vw;
+  max-width: 45vw;
+  order: 1;
+}
+
+#partOneSecond {
+  min-width: 45vw;
+  order: 2;
+  max-width: 45vw;
+  position: relative;
+}
+
+.beerWalksIll {
+  height: 40vw;
+  position: relative;
+  margin: auto;
+  top: 0vw;
+  left: 0vw;
+}
+
+.social_bg {
+  position: absolute;
+  right: -5vw;
+  height: 80vh;
+  bottom: -5vh;
+}
+
+#firstP {
+  font-family: "suburban flamingo";
+  color: #fbf8ef;
+  display: block;
+  font-size: 2.2vw;
+  text-align: left;
+  margin: 0;
+  width: 60%;
+}
+
+#partTwo {
+  display: flex;
+  flex: 2;
+  order: 1;
+  width: 100vw;
+  margin: 0 auto;
+  align-items: top;
+  justify-content: center;
+}
+
+#partTwoFirst {
+  width: 45vw;
+  order: 1;
+}
+
+#partTwoSecond {
+  display: grid;
+  grid-template-rows: 3;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  width: 55vw;
+  order: 2;
+}
+
+#partTwoSecond p {
+  width: 70%;
+  margin: auto;
+}
+
+#partThree {
+  height: 43vh;
+  width: 100vw;
+  order: 1;
+  background-color: #f4bb1f;
+  background-image: url("../illustrations/chris.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  position: relative;
+}
+
+#chris_text {
+  color: #1f1f1f;
+  text-align: left;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#about_button {
+  position: absolute;
+  width: 15vw;
+  bottom: 0vh;
+  right: 30vh;
+}
+
+#about_button img {
+  width: 14vw;
+  height: auto;
+}
+
+#partThreeFirst {
+  min-width: 45vw;
+  order: 2;
+  max-width: 45vw;
+}
+
+#chrisImg {
+  height: 30vw;
+  position: relative;
+  top: 0vw;
+  left: 0vw;
+}
+
+#partThreeSecond {
+  order: 2;
+  display: flex;
+  grid-template-rows: 3;
+  align-content: space-evenly;
+  align-items: center;
+  min-width: 45vw;
+  max-width: 45vw;
+}
+
+.boxIll {
+  height: 5vw;
+  position: relative;
+  top: 0vw;
+  left: 0vw;
+}
+
+#partFour {
+  order: 3;
+  display: flex;
+  flex: 2;
+  width: 80vw;
+  gap: 0;
+  grid-auto-rows: minmax(100vw);
+  margin: 0 auto;
+  align-items: end;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vw;
+}
+
+#partFourFirst {
+  width: 35vw;
+  margin: auto;
+  order: 1;
+  text-align: right;
+  background-image: url("../illustrations/box2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30vw;
+  text-align: center;
+  justify-content: center;
+}
+
+#partFourSecond {
+  width: 30vw;
+  order: 2;
+  margin: auto;
+  text-align: right;
+  background-image: url("../illustrations/box3.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30vw;
+  text-align: center;
+  justify-content: center;
+}
+
+/* //////////////////////////////// ADDITIONAL CHANGES /////////////////////////////////// */
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f4bb1f;
+  outline: 1px solid #000000;
+}
